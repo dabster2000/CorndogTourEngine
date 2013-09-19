@@ -33,6 +33,7 @@ public class TeamDao {
 		return entityManager.createQuery("SELECT t FROM Team t WHERE t.level = :level").setParameter("level", level).getResultList();
 	}
 	
+	// TODO Lav denne om så den fejler, hvis brugeren findes i forvejen.
 	@Transactional
 	public Team updateTeam(Team team) {
 		return entityManager.merge(team);
